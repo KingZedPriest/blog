@@ -17,3 +17,40 @@
     transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
   }
   
+  /* Hide scrollbar on Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #a3afbd;
+  border-radius: 5px;
+}
+body::-webkit-scrollbar-thumb:hover{
+  background-color: #737e8a;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+/* Hide scrollbar on Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #a3afbd #f1f1f1;
+}
+
+/* Style scrollbar thumb on Firefox */
+body::-webkit-scrollbar-thumb {
+  background-color: #a3afbd;
+  border-radius: 5px;
+}
+body::-webkit-scrollbar-thumb:hover{
+  background-color: #737e8a;
+}
+
+/* Style scrollbar track on Firefox */
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}

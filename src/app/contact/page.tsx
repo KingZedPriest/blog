@@ -17,19 +17,19 @@ export default function contact() {
           </p>
         </div>
         <div className="mx-auto mt-8 flex w-full flex-wrap items-center justify-between md:w-[60%]">
-          <div className="mx-auto mt-2 flex w-1/3 min-w-[10rem] flex-col items-center rounded-2xl p-2 hover:bg-white hover:text-black">
+          <div className="mx-auto mt-2 flex w-1/3 min-w-[10rem] flex-col items-center rounded-2xl p-2 duration-500 hover:bg-white hover:text-black">
             <HiLocationMarker size={20} />
             <p className="mt-2 text-xs font-semibold lg:text-sm">
               123 John Road Lagos.
             </p>
           </div>
-          <div className="mx-auto mt-2 flex w-1/3 min-w-[10rem] flex-col items-center rounded-2xl p-2 hover:bg-white hover:text-black">
+          <div className="mx-auto mt-2 flex w-1/3 min-w-[10rem] flex-col items-center rounded-2xl p-2 duration-500 hover:bg-white hover:text-black">
             <IoMdCall size={24} />
             <p className="mt-2 text-xs font-semibold lg:text-sm">
               +234 907 780 0445
             </p>
           </div>
-          <div className="mx-auto mt-2 flex w-1/3 min-w-[10rem] flex-col items-center rounded-2xl p-2 hover:bg-white hover:text-black">
+          <div className="mx-auto mt-2 flex w-1/3 min-w-[10rem] flex-col items-center rounded-2xl p-2 duration-500 hover:bg-white hover:text-black">
             <ImMail3 size={20} />
             <p className="mt-2 text-xs font-semibold lg:text-sm">
               hello@Vbtechgist.com
