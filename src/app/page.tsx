@@ -2,8 +2,12 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main>
-      <h1>Body</h1>
+    <main className='mx-auto max-w-7xl px-4 py-20 text-center text-black sm:px-6 lg:px-8'>
+      <div>
+        <p className='text-xs sm:text-sm lg:text-base font-bold'>Vbtechgist</p>
+        <h1 className='mt-2 lg:mt-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold'>News That Didn&apos;t Make the Cut.</h1>
+        <p className='mt-2 lg:mt-4 text-xs sm:text-sm lg:text-base font-semibold'>Uncovering Overlooked Political, Business, and Trending News.</p>
+      </div>
     </main>
   )
 }

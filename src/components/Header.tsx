@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link"; 
+import Link from "next/link";
 import { useState } from "react";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -7,36 +7,42 @@ export default function Header() {
     setMenuOpen(!menuOpen);
   };
   return (
-    <nav>
+    <nav className="fixed top-0 z-10 bg-white w-full">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-             <Link href="/"> <p className="text-xl font-bold text-black cursor-pointer">VBTECHGIST</p></Link>
+              <Link href="/">
+                {" "}
+                <p className="cursor-pointer text-xl font-bold text-black">
+                  VBTECHGIST
+                </p>
+              </Link>
             </div>
           </div>
           <div className="hidden md:flex">
             <Link
               href="/"
-              className="rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500"
+              className="rounded-md px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
             >
               Home
             </Link>
             <Link
-              href="/latest" prefetch
-              className="rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500"
+              href="/latest"
+              prefetch
+              className="rounded-md px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
             >
               Latest News
             </Link>
             <Link
               href="/about"
-              className="rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500"
+              className="rounded-md px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
             >
               About Us
             </Link>
             <Link
               href="/contact"
-              className="rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500"
+              className="rounded-md px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
             >
               Contact Us
             </Link>
@@ -74,28 +80,33 @@ export default function Header() {
         </div>
       </div>
       {menuOpen && (
-        <div className="md:hidden">
+        <div
+          className={`mb-2 transition-opacity duration-500 md:hidden ${
+            menuOpen ? "opacity-100" : "opacity-0"
+          } shadow-md`}
+        >
           <Link
             href="/"
-            className="block rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500um"
+            className="duration-500um block rounded-md px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
           >
             Home
           </Link>
           <Link
-            href="/latest" prefetch
-            className="block rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500um"
+            href="/latest"
+            prefetch
+            className="duration-500um block rounded-md px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
           >
             Latest News
           </Link>
           <Link
             href="/about"
-            className="block rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500um"
+            className="duration-500um block rounded-md px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
           >
             About Us
           </Link>
           <Link
-            href="/about"
-            className="block rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500um"
+            href="/contact"
+            className="duration-500um block rounded-md px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
           >
             Contact Us
           </Link>
