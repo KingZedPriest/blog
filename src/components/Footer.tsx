@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function footer() {
   return (
     <div className="bg-[url('/background.jpg')] bg-cover bg-no-repeat">
@@ -15,77 +16,77 @@ export default function footer() {
           <div className="flex w-full justify-evenly  md:w-[40%] md:justify-between">
             <div className="w-[5rem]">
               <h1 className="font-semibold">COMPANY</h1>
-              <a href="">
+              <Link href="/about">
                 <p className="mt-4 duration-500 hover:font-semibold hover:text-black">
                   About Us
                 </p>
-              </a>
-              <a href="">
+              </Link>
+              <Link href="/contact">
                 <p className="mt-2 duration-500 hover:font-semibold hover:text-black">
                   Contact
                 </p>
-              </a>
-              <a href="">
+              </Link>
+              <Link href="/support">
                 <p className="mt-2 duration-500 hover:font-semibold hover:text-black">
                   Support
                 </p>
-              </a>
+              </Link>
             </div>
             <div className="w-[5rem]">
               <h1 className="font-semibold">RESOURCES</h1>
-              <a href="">
+              <Link href="/">
                 <p className="mt-4 duration-500 hover:font-semibold hover:text-black">
                   Blog
                 </p>
-              </a>
-              <a href="">
+              </Link>
+              <Link href="/subscription" prefetch>
                 <p className="mt-2 duration-500 hover:font-semibold hover:text-black">
                   Newsletter
                 </p>
-              </a>
-              <a href="">
+              </Link>
+              <Link href="/events">
                 <p className="mt-2 duration-500 hover:font-semibold hover:text-black">
-                  Tutorial
+                  Events
                 </p>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="mt-8 flex w-full justify-evenly md:mt-0 md:w-[40%] md:justify-between">
             <div className="w-[5rem]">
               <h1 className="font-semibold">SOCIAL</h1>
-              <a target="_blank" rel="noopener noreferrer" href="">
+              <Link target="_blank" rel="noopener noreferrer" href="">
                 <p className="mt-4 duration-500 hover:font-semibold hover:text-black">
                   Twitter
                 </p>
-              </a>
-              <a target="_blank" rel="noopener noreferrer" href="">
+              </Link>
+              <Link target="_blank" rel="noopener noreferrer" href="">
                 <p className="mt-2 duration-500 hover:font-semibold hover:text-black">
                   Facebook
                 </p>
-              </a>
-              <a target="_blank" rel="noopener noreferrer" href="">
+              </Link>
+              <Link target="_blank" rel="noopener noreferrer" href="">
                 <p className="mt-2 duration-500 hover:font-semibold hover:text-black">
                   Instagram
                 </p>
-              </a>
+              </Link>
             </div>
             <div className="w-[5rem]">
               <h1 className="font-semibold">LEGAL</h1>
-              <a href="">
+              <Link href="/terms">
                 <p className="mt-4 duration-500 hover:font-semibold hover:text-black">
                   Terms
                 </p>
-              </a>
-              <a href="">
+              </Link>
+              <Link href="/terms">
                 <p className="mt-2 duration-500 hover:font-semibold hover:text-black">
                   Privacy
                 </p>
-              </a>
-              <a href="">
+              </Link>
+              <Link href="/terms">
                 <p className="mt-2 duration-500 hover:font-semibold hover:text-black">
                   Licenses
                 </p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link"; 
 import { useState } from "react";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,34 +12,34 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <p className="text-xl font-bold text-black cursor-pointer">VBTECHGIST</p>
+             <Link href="/"> <p className="text-xl font-bold text-black cursor-pointer">VBTECHGIST</p></Link>
             </div>
           </div>
           <div className="hidden md:flex">
-            <a
-              href="#"
-              className="rounded-md hover:bg-black px-3 py-2 text-sm font-semibold text-black hover:text-white duration-500"
+            <Link
+              href="/"
+              className="rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500"
             >
               Home
-            </a>
-            <a
-              href="#"
-              className="rounded-md hover:bg-black px-3 py-2 text-sm font-semibold text-black hover:text-white duration-500"
+            </Link>
+            <Link
+              href="/latest" prefetch
+              className="rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500"
             >
               Latest News
-            </a>
-            <a
-              href="#"
-              className="rounded-md hover:bg-black px-3 py-2 text-sm font-semibold text-black hover:text-white duration-500"
+            </Link>
+            <Link
+              href="/about"
+              className="rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500"
             >
               About Us
-            </a>
-            <a
-              href="#"
-              className="rounded-md hover:bg-black px-3 py-2 text-sm font-semibold text-black hover:text-white duration-500"
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
           <div className="md:hidden">
             <button
@@ -74,30 +75,30 @@ export default function Header() {
       </div>
       {menuOpen && (
         <div className="md:hidden">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="block rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500um"
           >
             Home
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/latest" prefetch
             className="block rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500um"
           >
             Latest News
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/about"
             className="block rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500um"
           >
             About Us
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/about"
             className="block rounded-md hover:bg-black px-3 py-2 text-base font-semibold text-black hover:text-white duration-500um"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       )}
     </nav>
