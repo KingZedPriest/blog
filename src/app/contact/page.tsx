@@ -6,8 +6,9 @@ import { LuMail } from "react-icons/lu";
 import { BsPhone } from "react-icons/bs";
 export default function contact() {
   return (
+
     <div className=" bg-black text-white">
-      <main className="mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl px-4 py-[10rem] text-center sm:px-6 lg:px-8">
         <div>
           <h1 className="mt-2 text-xl font-bold sm:text-2xl md:text-3xl lg:mt-4 lg:text-4xl">
             Contact Us

@@ -23,26 +23,26 @@ export default function Header() {
           <div className="hidden md:flex">
             <Link
               href="/"
-              className="rounded-md px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
+              className="rounded-[2rem] px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
             >
               Home
             </Link>
             <Link
               href="/latest"
               prefetch
-              className="rounded-md px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
+              className="rounded-[2rem] px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
             >
               Latest News
             </Link>
             <Link
               href="/about"
-              className="rounded-md px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
+              className="rounded-[2rem] px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
             >
               About Us
             </Link>
             <Link
               href="/contact"
-              className="rounded-md px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
+              className="rounded-[2rem] px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
             >
               Contact Us
             </Link>
@@ -87,26 +87,26 @@ export default function Header() {
         >
           <Link
             href="/"
-            className="duration-500um block rounded-md px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
+            className="duration-500 block rounded-[2rem] px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
           >
             Home
           </Link>
           <Link
             href="/latest"
             prefetch
-            className="duration-500um block rounded-md px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
+            className="duration-500 block rounded-[2rem] px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
           >
             Latest News
           </Link>
           <Link
             href="/about"
-            className="duration-500um block rounded-md px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
+            className="duration-500 block rounded-[2rem] px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
           >
             About Us
           </Link>
           <Link
             href="/contact"
-            className="duration-500um block rounded-md px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
+            className="duration-500 block rounded-[2rem] px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
           >
             Contact Us
           </Link>
