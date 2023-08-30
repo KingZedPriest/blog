@@ -11,6 +11,7 @@ export default function about() {
           placeholder="blur"
         />
         <p className="mt-10 text-xs sm:text-sm lg:text-base font-semibold w-[90%] lg:w-[60%]">
+        <p className="uppercase my-2">Support</p>
           Exploring New Horizons: From Streamlining Processes to Cultivating
           Engaged Culture. <br /> We journey through innovation – harnessing automation
           for efficiency and nurturing a culture where passion thrives.
