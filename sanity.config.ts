@@ -12,6 +12,8 @@ import {schema} from './sanity/schema'
 
 export default defineConfig({
   basePath: '/vbtechgist/studio',
+  name: "VBTechGist_Admin_Studio",
+  title: "VBTechGist Admin Studio",
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
