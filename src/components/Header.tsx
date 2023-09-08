@@ -7,13 +7,12 @@ export default function Header() {
     setMenuOpen(!menuOpen);
   };
   return (
-    <nav className="fixed top-0 z-10 bg-white w-full">
+    <nav className="fixed top-0 z-10 w-full bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link href="/">
-                {" "}
                 <p className="cursor-pointer text-xl font-bold text-black">
                   VBTECHGIST
                 </p>
@@ -87,26 +86,26 @@ export default function Header() {
         >
           <Link
             href="/"
-            className="duration-500 block rounded-[2rem] px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
+            className="block rounded-[2rem] px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
           >
             Home
           </Link>
           <Link
             href="/latest"
             prefetch
-            className="duration-500 block rounded-[2rem] px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
+            className="block rounded-[2rem] px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
           >
             Latest News
           </Link>
           <Link
             href="/about"
-            className="duration-500 block rounded-[2rem] px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
+            className="block rounded-[2rem] px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
           >
             About Us
           </Link>
           <Link
             href="/contact"
-            className="duration-500 block rounded-[2rem] px-3 py-2 text-base font-semibold text-black hover:bg-black hover:text-white"
+            className="block rounded-[2rem] px-3 py-2 text-base font-semibold text-black duration-500 hover:bg-black hover:text-white"
           >
             Contact Us
           </Link>

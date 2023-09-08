@@ -12,12 +12,12 @@
   
   /* Animate slide down */
   .animate-slide-down {
-    max-height: 1000px; /* Adjust to a value that works for your content */
+    max-height: 1000px; 
     opacity: 1;
     transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
   }
   
-  /* Hide scrollbar on Chrome, Safari, and Opera */
+/* Hide scrollbar on Chrome, Safari, and Opera */
 body::-webkit-scrollbar {
   width: 10px;
 }
