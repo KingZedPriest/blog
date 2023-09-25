@@ -91,7 +91,7 @@ export default function footer() {
           </div>
         </div>
         <div className="mt-20 flex flex-col items-center justify-between sm:flex-row">
-        <Link href="/"> <h1 className="mt-4 text-base font-semibold sm:mt-0 sm:text-lg md:text-xl lg:text-2xl hover:text-gray-500 duration-500">
+        <Link href="/"> <h1 className="mt-4 text-base font-semibold sm:mt-0 sm:text-lg md:text-xl lg:text-2xl hover:text-black duration-500">
             Vbtechgist
           </h1> </Link>
           <p className="mt-2 text-xs sm:text-sm md:mt-0 md:text-base">
