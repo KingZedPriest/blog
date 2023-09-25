@@ -13,7 +13,7 @@ export default function Header() {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link href="/">
-                <p className="cursor-pointer text-xl font-bold text-black">
+                <p className="cursor-pointer text-xl font-bold text-black hover:text-gray-500 duration-500">
                   VBTECHGIST
                 </p>
               </Link>
