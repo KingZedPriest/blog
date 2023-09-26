@@ -1,8 +1,6 @@
-"use client";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { usePathname } from "next/navigation";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
@@ -18,22 +16,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  let pathName = usePathname();
-  const isHidden = (pathName = "/vbtechgist/studio/desk");
   return (
     <html lang="en">
       <body className={`${inter.className} bg-[#ffffff]`}>
-        {!isHidden && (
           <section>
             <Header />
-          </section>
-        )}
+          </section> 
         <section>{children}</section>
-        {!isHidden && (
           <section>
             <Footer />
           </section>
-        )}
       </body>
     </html>
   );

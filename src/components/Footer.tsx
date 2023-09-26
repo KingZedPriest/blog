@@ -1,7 +1,13 @@
+"use client"
+import { usePathname } from 'next/navigation';
 import Link from "next/link";
+
 export default function footer() {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const pathName = usePathname()
+  
   return (
-    <div className="bg-[url('/background.jpg')] bg-cover bg-no-repeat">
+    <div className={`${pathName === "/vbtechgist/studio/desk" ? "hidden" : ""} bg-[url('/background.jpg')] bg-cover bg-no-repeat`}>
       <div className="mx-auto max-w-7xl px-4 py-20 text-center text-white sm:px-6 lg:px-8">
         <h1 className="text-xl font-semibold sm:text-2xl md:text-3xl lg:text-4xl">
           Want to be first in getting these inspiring stories and ideas?
