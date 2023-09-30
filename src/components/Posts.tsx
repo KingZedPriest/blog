@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { SanityDocument } from "@sanity/client";
-import {Metadata} from "next";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: 'VBTechgist Posts',
