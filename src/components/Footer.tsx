@@ -9,7 +9,7 @@ export default function footer() {
   return (
     <div
       className={`${
-        pathName === "/vbtechgist/studio/desk" ? "hidden" : ""
+        pathName === "/studio" ? "hidden" : ""
       } bg-[url('/background.jpg')] bg-cover bg-no-repeat`}
     >
       <div className="mx-auto max-w-7xl px-4 py-20 text-center text-black sm:px-6 lg:px-8">

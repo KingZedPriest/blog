@@ -10,7 +10,7 @@ export default function Header() {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const pathName = usePathname()
   return (
-    <nav className={`${pathName === "/vbtechgist/studio/desk" ? "hidden" : ""} fixed top-0 z-10 w-full bg-white`}>
+    <nav className={`${pathName === "/studio" ? "hidden" : ""} fixed top-0 z-10 w-full bg-white`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">

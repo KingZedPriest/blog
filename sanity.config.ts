@@ -1,5 +1,5 @@
 /**
- * This configuration is used to for the Sanity Studio that’s mounted on the `\src\app\vbtechgist\studio\[[...index]]\page.tsx` route
+ * This configuration is used to for the Sanity Studio that’s mounted on the `\src\app\studio\[[...index]]\page.tsx` route
  */
 
 import {visionTool} from '@sanity/vision'
@@ -13,7 +13,7 @@ import { myTheme } from './theme'
 import Logo from '@/components/Logo'
 
 export default defineConfig({
-  basePath: '/vbtechgist/studio',
+  basePath: '/studio',
   name: "VBTechGist_Admin_Studio",
   title: "VBTechGist Admin Studio",
   projectId,
