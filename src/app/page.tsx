@@ -3,7 +3,7 @@ import Posts from "@/components/Posts";
 import { client } from "../../sanity/lib/client";
 
 const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
-  _id, title, slug
+ ..., _id, title, slug
 }`;
 
 

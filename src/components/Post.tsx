@@ -9,8 +9,7 @@ const builder = imageUrlBuilder(client);
 export default function Post({ post }: { post: SanityDocument }) {
     
   return (
-    <>
-      <main className="container mx-auto prose prose-lg p-4">
+      <article className="container mx-auto prose prose-lg p-4">
         <h1>{post.title}</h1>
         {post?.mainImage ? <Image
           className="float-left m-0 w-1/3 mr-4 rounded-lg"
@@ -20,7 +19,6 @@ export default function Post({ post }: { post: SanityDocument }) {
           alt={post?.mainImage?.alt}
         /> : null}
         {post?.body ? <PortableText value={post.body} /> : null}
-      </main>
-    </>
+      </article>
   );
 }
