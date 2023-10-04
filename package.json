@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^3.0.9",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.16.0",
     "@types/node": "20.5.6",
@@ -29,6 +30,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "@types/event-source-polyfill": "^1.0.1",
     "prettier": "^3.0.2",
     "prettier-plugin-tailwindcss": "^0.5.3"

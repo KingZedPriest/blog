@@ -8,7 +8,6 @@ export const metadata: Metadata = {
 
 export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
     const title = posts.length === 0 ? `No Post Available.` : `${posts.length} Post(s).`
-    console.log(`This is the Posts length ${posts.length}`)
   return (
     <>
       <main className="container mx-auto grid grid-cols-1 divide-y divide-blue-100">
