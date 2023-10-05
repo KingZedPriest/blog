@@ -4,12 +4,28 @@ import { client } from "../../sanity/lib/client";
 
 //Import Icons
 import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
+
+//Import Needed Components
+import HotPost from "@/components/HotPost";
+
+//Queries
 const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
  ..., _id, title, slug
 }`;
 
+const hotQuery = groq`
+  *[_type == "post" && "Hot" in categories[]->title]{
+    _id,
+    title,
+    slug,
+  }
+`;
+
+
 export default async function Home() {
   const data = await client.fetch(postsQuery);
+  const hotPosts = await client.fetch(hotQuery);
+  console.log(`This is the hot posts length ${hotPosts.length}`);
   return (
     <main className="mx-auto max-w-7xl px-4 py-20 text-center text-black sm:px-6 lg:px-8">
       <div>
@@ -24,9 +40,10 @@ export default async function Home() {
         </p>
       </div>
       <article>
+        <HotPost />
         <Posts posts={data} />
       </article>
-      <section className="flex items-center justify-between mt-10">
+      <section className="mt-10 flex items-center justify-between">
         <div className="flex items-center gap-1 duration-500 hover:-translate-x-1">
           <BsArrowLeftShort size={20} /> <button>Prev</button>
         </div>
