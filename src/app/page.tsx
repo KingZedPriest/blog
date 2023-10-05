@@ -9,7 +9,8 @@ import { BsArrowRightShort, BsArrowLeftShort } from "react-icons/bs";
 import HotPost from "@/components/HotPost";
 
 //Queries
-const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
+const postsQuery = groq`*[_type == "post" && defined(slug.current)]
+| order(publishedAt desc){
  ..., _id, title, slug
 }`;
 
@@ -21,11 +22,9 @@ const hotQuery = groq`
   }
 `;
 
-
 export default async function Home() {
   const data = await client.fetch(postsQuery);
   const hotPosts = await client.fetch(hotQuery);
-  console.log(`This is the hot posts length ${hotPosts.length}`);
   return (
     <main className="mx-auto max-w-7xl px-4 py-20 text-center text-black sm:px-6 lg:px-8">
       <div>
