@@ -36,25 +36,27 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
       <main className="mt-10">
         <div className="flex flex-col flex-wrap items-center justify-center gap-y-10 md:flex-row md:gap-x-10 xl:justify-between xl:gap-x-0">
           {posts.map((post) => (
-            <div key={post._id} className="h-96 w-full bg-red-400 md:w-[24rem] relative">
-              {post?.mainImage ? (
+            <div key={post._id} className="h-96 w-full md:w-[24rem]">
+              <div className="h-1/2 w-full relative overflow-hidden">
+                {post?.mainImage ? (
               <Image
                 src={urlFor(post.mainImage).url()}
-                fill
+                fill={true}
                 alt={post?.mainImage?.alt ?? "VBTechGist Image"}
-                className="cursor-pointer"
+                className="object-cover"
               />
             ) : (
               "No Image"
             )}
-          <div className="absolute inset-0 bg-black opacity-70"></div>
-          <div className="absolute inset-0 top-[50%] px-4 text-left font-semibold text-white">
+            </div>
+              
+          <div className="mt-2 font-semibold text-black text-left">
               <p className="text-xs md:text-sm flex items-center">
                 {post?.author ? post.author.name : "VBTechGist Writer"}
                 <BsDot />
                 <span> {formatDate(post._createdAt)}.</span>
               </p>
-              <h1 className="mt-2 text-sm sm:text-base md:text-lg lg:text-xl">
+              <h1 className="mt-2 text-sm sm:text-base md:text-lg lg:text-xl hover:underline">
                 <Link href={post.slug.current}>{post.title}</Link>
               </h1>
               <p className="mt-2 text-xs md:text-sm">
@@ -65,7 +67,7 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
               <div className="mt-4 flex gap-2">
                 {post.categories.map((category: SanityDocument) => (
                   <div
-                    className="rounded-xl border border-white px-2 py-1 text-xs"
+                    className="rounded-xl border border-black px-2 py-1 text-xs"
                     key={category._ref}
                   >
                     {category.title}

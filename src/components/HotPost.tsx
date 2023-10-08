@@ -65,7 +65,7 @@ export default function App({ hotPosts = [] }: { hotPosts: SanityDocument[] }) {
                 <BsDot />
                 <span> {formatDate(hotPost._createdAt)}.</span>
               </p>
-              <h1 className="mt-2 text-lg sm:text-xl md:text-2xl lg:text-3xl">
+              <h1 className="mt-2 text-lg sm:text-xl md:text-2xl lg:text-3xl hover:underline">
                 <Link href={hotPost.slug.current}>{hotPost.title}</Link>
               </h1>
               <p className="mt-2 text-xs sm:text-sm md:text-base">
