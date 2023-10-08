@@ -10,21 +10,28 @@ import HotPost from "@/components/HotPost";
 
 //Queries
 const postsQuery = groq`*[_type == "post" && defined(slug.current)]
-| order(publishedAt desc){
- ..., _id, title, slug
-}`;
+{
+ ..., 
+ _id, 
+ author->, 
+ categories[]->, 
+ title, 
+ slug
+} | order(_createdAt desc)`;
 
-const hotQuery = groq`
+const hotPostsQuery = groq`
   *[_type == "post" && "Hot" in categories[]->title]{
-    _id,
-    title,
-    slug,
-  }
-`;
+    ..., 
+    _id, 
+    author->, 
+    categories[]->, 
+    title, 
+    slug
+} | order(_createdAt desc)`;
 
 export default async function Home() {
   const data = await client.fetch(postsQuery);
-  const hotPosts = await client.fetch(hotQuery);
+  const hotPosts = await client.fetch(hotPostsQuery);
   return (
     <main className="mx-auto max-w-7xl px-4 py-20 text-center text-black sm:px-6 lg:px-8">
       <div>
