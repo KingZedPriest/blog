@@ -46,7 +46,7 @@ export default async function Home() {
         </p>
       </div>
       <article>
-        <HotPost />
+        <HotPost hotPosts={hotPosts}/>
         <Posts posts={data} />
       </article>
       <section className="mt-10 flex items-center justify-between">

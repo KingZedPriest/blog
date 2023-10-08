@@ -7,18 +7,19 @@ import { client } from "../../sanity/lib/client";
 const builder = imageUrlBuilder(client);
 
 export default function Post({ post }: { post: SanityDocument }) {
-    
   return (
-      <article className="container mx-auto prose prose-lg p-4">
-        <h1>{post.title}</h1>
-        {post?.mainImage ? <Image
-          className="float-left m-0 w-1/3 mr-4 rounded-lg"
+    <article className="prose prose-lg container mx-auto p-4">
+      <h1>{post.title}</h1>
+      {post?.mainImage ? (
+        <Image
+          className="float-left m-0 mr-4 w-1/3 rounded-lg"
           src={builder.image(post.mainImage).width(300).height(300).url()}
           width={300}
           height={300}
-          alt={post?.mainImage?.alt}
-        /> : null}
-        {post?.body ? <PortableText value={post.body} /> : null}
-      </article>
+          alt={post?.mainImage?.alt ?? "VBTechGist Image"}
+        />
+      ) : "No Image"}
+      {post?.body ? <PortableText value={post.body} /> : "The body of the blog Post."}
+    </article>
   );
 }
