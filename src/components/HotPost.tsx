@@ -1,6 +1,5 @@
 "use client";
 import type { SanityDocument } from "@sanity/client";
-import { client } from "../../sanity/lib/client";
 import Image from "next/image";
 import Link from "next/link";
 import urlFor from "../../sanity/lib/urlFor";
@@ -12,6 +11,9 @@ import "swiper/css";
 
 // import required modules
 import { Autoplay } from "swiper/modules";
+
+//Import React Icons
+import { BsDot } from "react-icons/bs";
 
 export default function App({ hotPosts = [] }: { hotPosts: SanityDocument[] }) {
   const extractFirstWords = (text: string, wordCount: number) => {
@@ -25,11 +27,20 @@ export default function App({ hotPosts = [] }: { hotPosts: SanityDocument[] }) {
     const firstWords = words.slice(0, wordCount).join(" ");
     return `${firstWords}...`;
   };
+  function formatDate(inputDate: string): string {
+    const date = new Date(inputDate);
+    const options: Intl.DateTimeFormatOptions = {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
+    return date.toLocaleDateString("en-US", options);
+  }
   return (
     <div className="mt-20 h-[30rem]">
       <Swiper
         autoplay={{
-          delay: 2500,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}
@@ -37,26 +48,25 @@ export default function App({ hotPosts = [] }: { hotPosts: SanityDocument[] }) {
       >
         {hotPosts.map((hotPost) => (
           <SwiperSlide key={hotPost._id} className="relative">
-            
-              {hotPost?.mainImage ? (
-                <Image
-                  src={urlFor(hotPost.mainImage).url()}
-                  fill
-                  alt={hotPost?.mainImage?.alt ?? "VBTechGist Image"}
-                  className="cursor-pointer"
-                />
-              ) : (
-                "No Image"
-              )}
+            {hotPost?.mainImage ? (
+              <Image
+                src={urlFor(hotPost.mainImage).url()}
+                fill
+                alt={hotPost?.mainImage?.alt ?? "VBTechGist Image"}
+                className="cursor-pointer"
+              />
+            ) : (
+              "No Image"
+            )}
             <div className="absolute inset-0 bg-black opacity-70"></div>
             <div className="absolute inset-0 top-[60%] px-4 text-left font-semibold text-white">
-              <p className="text-xs sm:text-sm md:text-base">
+              <p className="text-xs sm:text-sm md:text-base flex items-center">
                 {hotPost?.author ? hotPost.author.name : "VBTechGist Writer"}
+                <BsDot />
+                <span> {formatDate(hotPost._createdAt)}.</span>
               </p>
               <h1 className="mt-2 text-lg sm:text-xl md:text-2xl lg:text-3xl">
-              <Link href={hotPost.slug.current}>
-                {hotPost.title}
-                </Link>
+                <Link href={hotPost.slug.current}>{hotPost.title}</Link>
               </h1>
               <p className="mt-2 text-xs sm:text-sm md:text-base">
                 {hotPost?.body
@@ -64,12 +74,14 @@ export default function App({ hotPosts = [] }: { hotPosts: SanityDocument[] }) {
                   : "The body of the blog Post."}
               </p>
               <div className="mt-4 flex gap-2">
-                <div className="rounded-xl border border-white px-2 py-1 text-xs">
-                  Web Developer
-                </div>
-                <div className="rounded-xl border border-white px-2 py-1 text-xs">
-                  Hot
-                </div>
+                {hotPost.categories.map((category: SanityDocument) => (
+                  <div
+                    className="rounded-xl border border-white px-2 py-1 text-xs"
+                    key={category._ref}
+                  >
+                    {category.title}
+                  </div>
+                ))}
               </div>
             </div>
           </SwiperSlide>
