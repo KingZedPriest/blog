@@ -33,7 +33,7 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
     return date.toLocaleDateString("en-US", options);
   }
   return (
-      <main className="mt-10">
+      <main className="mt-20">
         <div className="flex flex-col flex-wrap items-center justify-center gap-y-10 md:flex-row md:gap-x-10 xl:justify-between xl:gap-x-0">
           {posts.map((post) => (
             <div key={post._id} className="h-96 w-full md:w-[24rem]">
