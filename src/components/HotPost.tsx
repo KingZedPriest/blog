@@ -37,7 +37,7 @@ export default function App({ hotPosts = [] }: { hotPosts: SanityDocument[] }) {
     return date.toLocaleDateString("en-US", options);
   }
   return (
-    <div className="mt-20 h-[30rem]">
+    <div className="mt-20 h-[36rem]">
       <Swiper
         autoplay={{
           delay: 4000,
@@ -59,7 +59,7 @@ export default function App({ hotPosts = [] }: { hotPosts: SanityDocument[] }) {
               "No Image"
             )}
             <div className="absolute inset-0 bg-black opacity-70"></div>
-            <div className="absolute inset-0 top-[60%] px-4 text-left font-semibold text-white">
+            <div className="absolute inset-0 top-[70%] px-4 text-left font-semibold text-white">
               <p className="text-xs sm:text-sm md:text-base flex items-center">
                 {hotPost?.author ? hotPost.author.name : "VBTechGist Writer"}
                 <BsDot />
