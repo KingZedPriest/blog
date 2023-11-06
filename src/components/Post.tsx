@@ -3,9 +3,28 @@ import imageUrlBuilder from "@sanity/image-url";
 import { SanityDocument } from "@sanity/client";
 import { PortableText } from "@portabletext/react";
 import { client } from "../../sanity/lib/client";
+import { urlForImage }  from "../../sanity/lib/image";
 
 const builder = imageUrlBuilder(client);
-
+const ptComponents = {
+  types: {
+    image: ({ value }: any) => {
+      if (!value?.asset?._ref) {
+        return null
+      }
+      return (
+        <Image
+          alt={value.alt || ' '}
+          loading="lazy"
+          src={urlForImage(value).fit('max').auto('format').url()}
+          height={120}
+          width={300}
+          className="w-full mx-auto"
+        />
+      )
+    }
+  }
+}
 export default function Post({ post }: { post: SanityDocument }) {
   return (
     <article className="prose prose-lg container mx-auto p-4">
@@ -19,7 +38,7 @@ export default function Post({ post }: { post: SanityDocument }) {
           alt={post?.mainImage?.alt ?? "VBTechGist Image"}
         />
       ) : "No Image"}
-      {post?.body ? <PortableText value={post.body} /> : "The body of the blog Post."}
+      {post?.body ? <PortableText value={post.body} components={ptComponents}/> : "The body of the blog Post."}
     </article>
   );
 }

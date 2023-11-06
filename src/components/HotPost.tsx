@@ -2,7 +2,7 @@
 import type { SanityDocument } from "@sanity/client";
 import Image from "next/image";
 import Link from "next/link";
-import urlFor from "../../sanity/lib/urlFor";
+import { urlForImage } from "../../sanity/lib/image";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -50,7 +50,7 @@ export default function App({ hotPosts = [] }: { hotPosts: SanityDocument[] }) {
           <SwiperSlide key={hotPost._id} className="relative">
             {hotPost?.mainImage ? (
               <Image
-                src={urlFor(hotPost.mainImage).url()}
+                src={urlForImage(hotPost.mainImage).url()}
                 fill
                 alt={hotPost?.mainImage?.alt ?? "VBTechGist Image"}
                 className="cursor-pointer"

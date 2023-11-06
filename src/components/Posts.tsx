@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { SanityDocument } from "@sanity/client";
 import { Metadata } from "next";
-import urlFor from "../../sanity/lib/urlFor";
+import { urlForImage } from "../../sanity/lib/image";
 import Image from "next/image";
 
 //Import React Icons
@@ -40,7 +40,7 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
             <div className="relative h-1/2 w-full overflow-hidden">
               {post?.mainImage ? (
                 <Image
-                  src={urlFor(post.mainImage).url()}
+                  src={urlForImage(post.mainImage).url()}
                   fill={true}
                   alt={post?.mainImage?.alt ?? "VBTechGist Image"}
                   className="object-cover"
@@ -65,7 +65,7 @@ export default function Posts({ posts = [] }: { posts: SanityDocument[] }) {
               <p className="mt-2 text-xs md:text-sm">
                 {post?.body
                   ? extractFirstWords(post.body[0].children[0].text, 10)
-                  : "The body of the blog Post."}
+                  : "No Preview Found."}
               </p>
               <div className="mt-4 flex gap-2">
                 {post.categories.map((category: SanityDocument) => (
