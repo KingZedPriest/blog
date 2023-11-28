@@ -16,7 +16,7 @@ export default async function Page({ params: { slug } }: Props) {
    body
   }`;
 
-  const post: SanityDocument = await client.fetch(query, { slug });
+  const post: SanityDocument = await client.fetch(query, { slug }, { next: { revalidate: 120 } });
   return (
     <div className="py-20">
       <Post post={post} />

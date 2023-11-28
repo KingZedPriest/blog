@@ -30,8 +30,8 @@ const hotPostsQuery = groq`
 } | order(_createdAt desc)`;
 
 export default async function Home() {
-  const data = await client.fetch(postsQuery);
-  const hotPosts = await client.fetch(hotPostsQuery);
+  const data = await client.fetch(postsQuery, { next: { revalidate: 120 } });
+  const hotPosts = await client.fetch(hotPostsQuery, { next: { revalidate: 120 } });
   return (
     <main className="mx-auto max-w-7xl px-4 py-20 text-center text-black sm:px-6 lg:px-8">
       <div>
