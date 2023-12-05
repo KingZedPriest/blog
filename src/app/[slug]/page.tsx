@@ -7,6 +7,8 @@ type Props = {
     slug: string;
   };
 };
+//Makes the page revalidate every 60 seconds, removing any caches and all.
+export const revalidate = 60
 
 export default async function Page({ params: { slug } }: Props) {
   const query = groq`*[_type == "post" && slug.current == $slug][0]{

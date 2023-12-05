@@ -29,6 +29,9 @@ const hotPostsQuery = groq`
     slug
 } | order(_createdAt desc)`;
 
+//Makes the page revalidate every 60 seconds, removing any caches and all.
+export const revalidate = 60
+
 export default async function Home() {
   const data = await client.fetch(postsQuery, { next: { revalidate: 120 } });
   const hotPosts = await client.fetch(hotPostsQuery, { next: { revalidate: 120 } });
